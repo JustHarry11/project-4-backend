@@ -1,0 +1,24 @@
+from rest_framework.views import APIView
+from rest_framework.response import Response
+
+class BoardgameListView(APIView):
+    # Index
+    def get(self, request):
+        return Response('HIT INDEX ROUTE')
+
+    # Create
+    def post(self, request):
+        return Response('HIT CREATE ROUTE')
+
+class BoardgameDetailView(APIView):
+    # Show
+    def get(self, request):
+        return Response('HIT SHOW ROUTE')
+
+    # Update
+    def put(self, request):
+        return Response('HIT UPDATE ROUTE')
+
+    # Delete
+    def delete(self, request):
+        return Response('HIT DELETE ROUTE')
