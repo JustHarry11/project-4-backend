@@ -12,13 +12,13 @@ class BoardgameListView(APIView):
 
 class BoardgameDetailView(APIView):
     # Show
-    def get(self, request):
+    def get(self, request, pk):
         return Response('HIT SHOW ROUTE')
 
     # Update
-    def put(self, request):
+    def put(self, request, pk):
         return Response('HIT UPDATE ROUTE')
 
     # Delete
-    def delete(self, request):
+    def delete(self, request, pk):
         return Response('HIT DELETE ROUTE')
