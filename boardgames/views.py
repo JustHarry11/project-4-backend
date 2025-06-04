@@ -4,7 +4,7 @@ from rest_framework.response import Response
 class BoardgameListView(APIView):
     # Index
     def get(self, request):
-        return Response('HITTING INDEX ROUTE')
+        return Response('HIT INDEX ROUTE')
 
     # Create
     def post(self, request):
