@@ -1,9 +1,12 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
+from .models import Boardgame
 
 class BoardgameListView(APIView):
     # Index
     def get(self, request):
+        boardgames = Boardgame.objects.all()
+        print(boardgames)
         return Response('HIT INDEX ROUTE')
 
     # Create
