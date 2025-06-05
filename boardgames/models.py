@@ -22,6 +22,11 @@ class Boardgame(models.Model):
     min_players = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    likes = models.ManyToManyField(
+        to='users.User',
+        related_name='boardgames_likes',
+        blank=True
+    )
 
     def __str__(self):
         return self.title
