@@ -1,0 +1,202 @@
+[
+  {
+    "model": "boardgames.boardgame",
+    "pk": 1,
+    "fields": {
+      "owner": 1,
+      "title": "Monopoly",
+      "description": "Buy, trade, and develop properties to bankrupt your opponents.",
+      "instruction": "Move around the board, acquire properties, and charge rent.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/5/5c/Monopoly_Game.jpg",
+      "type": "Original",
+      "genre": "Economics",
+      "max_players": 6,
+      "min_players": 2,
+      "created_at": "2025-06-04T13:47:28.834Z",
+      "updated_at": "2025-06-05T11:28:43.146Z",
+      "likes": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "boardgames.boardgame",
+    "pk": 2,
+    "fields": {
+      "owner": 1,
+      "title": "Catan",
+      "description": "Trade and build to expand settlements across the island of Catan.",
+      "instruction": "Gather resources and use them to build roads, settlements, and cities.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/2/2d/Catan-2015-boxart.jpg",
+      "type": "Original",
+      "genre": "Strategy",
+      "max_players": 4,
+      "min_players": 3,
+      "created_at": "2025-06-04T13:48:10.000Z",
+      "updated_at": "2025-06-05T11:30:00.000Z",
+      "likes": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "boardgames.boardgame",
+    "pk": 3,
+    "fields": {
+      "owner": 1,
+      "title": "Ticket to Ride",
+      "description": "Collect train cards to build railways across the map.",
+      "instruction": "Claim railway routes by collecting matching train cards.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/5/59/Ticket_to_Ride_Board_Game_Box_EN.jpg",
+      "type": "Original",
+      "genre": "Route Building",
+      "max_players": 5,
+      "min_players": 2,
+      "created_at": "2025-06-04T13:49:00.000Z",
+      "updated_at": "2025-06-05T11:31:00.000Z",
+      "likes": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "boardgames.boardgame",
+    "pk": 4,
+    "fields": {
+      "owner": 1,
+      "title": "Carcassonne",
+      "description": "Place tiles to build cities and roads in a medieval landscape.",
+      "instruction": "Take turns placing tiles and meeples to score points.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/4/41/Carcassonne-game.jpg",
+      "type": "Original",
+      "genre": "Tile Placement",
+      "max_players": 5,
+      "min_players": 2,
+      "created_at": "2025-06-04T13:50:00.000Z",
+      "updated_at": "2025-06-05T11:32:00.000Z",
+      "likes": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "boardgames.boardgame",
+    "pk": 5,
+    "fields": {
+      "owner": 1,
+      "title": "Pandemic",
+      "description": "Work together to stop global disease outbreaks.",
+      "instruction": "Cooperate to treat infections and find cures before time runs out.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/f/fd/Pandemic_game.jpg",
+      "type": "Original",
+      "genre": "Cooperative",
+      "max_players": 4,
+      "min_players": 2,
+      "created_at": "2025-06-04T13:51:00.000Z",
+      "updated_at": "2025-06-05T11:33:00.000Z",
+      "likes": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "boardgames.boardgame",
+    "pk": 6,
+    "fields": {
+      "owner": 1,
+      "title": "7 Wonders",
+      "description": "Develop a civilization and construct architectural wonders.",
+      "instruction": "Draft cards and build your civilization across three ages.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/1/1e/7_Wonders_box_art.png",
+      "type": "Original",
+      "genre": "Card Drafting",
+      "max_players": 7,
+      "min_players": 3,
+      "created_at": "2025-06-04T13:52:00.000Z",
+      "updated_at": "2025-06-05T11:34:00.000Z",
+      "likes": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "boardgames.boardgame",
+    "pk": 7,
+    "fields": {
+      "owner": 1,
+      "title": "Azul",
+      "description": "Draft colorful tiles and decorate the palace walls.",
+      "instruction": "Take turns selecting tiles and strategically placing them.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/0/00/Azul_Game_Box.jpg",
+      "type": "Original",
+      "genre": "Abstract Strategy",
+      "max_players": 4,
+      "min_players": 2,
+      "created_at": "2025-06-04T13:53:00.000Z",
+      "updated_at": "2025-06-05T11:35:00.000Z",
+      "likes": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "boardgames.boardgame",
+    "pk": 8,
+    "fields": {
+      "owner": 1,
+      "title": "Wingspan",
+      "description": "Attract birds and build a powerful nature reserve engine.",
+      "instruction": "Play bird cards, gather food, and lay eggs to score points.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/2/2f/Wingspan_board_game_box_art.jpg",
+      "type": "Original",
+      "genre": "Engine Building",
+      "max_players": 5,
+      "min_players": 1,
+      "created_at": "2025-06-04T13:54:00.000Z",
+      "updated_at": "2025-06-05T11:36:00.000Z",
+      "likes": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "boardgames.boardgame",
+    "pk": 9,
+    "fields": {
+      "owner": 1,
+      "title": "Splendor",
+      "description": "Acquire gems and attract nobles to earn prestige.",
+      "instruction": "Collect chips and purchase development cards to win.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/d/d1/Splendor_Box_Cover.jpg",
+      "type": "Original",
+      "genre": "Economic Strategy",
+      "max_players": 4,
+      "min_players": 2,
+      "created_at": "2025-06-04T13:55:00.000Z",
+      "updated_at": "2025-06-05T11:37:00.000Z",
+      "likes": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "boardgames.boardgame",
+    "pk": 10,
+    "fields": {
+      "owner": 1,
+      "title": "Scythe",
+      "description": "Expand your territory in an alternate-history 1920s Europe.",
+      "instruction": "Deploy mechs, gather resources, and battle for dominance.",
+      "image_url": "https://upload.wikimedia.org/wikipedia/en/4/41/Scythe_box_art.jpg",
+      "type": "Original",
+      "genre": "Strategy",
+      "max_players": 7,
+      "min_players": 1,
+      "created_at": "2025-06-04T13:56:00.000Z",
+      "updated_at": "2025-06-05T11:38:00.000Z",
+      "likes": [
+        1
+      ]
+    }
+  }
+]
