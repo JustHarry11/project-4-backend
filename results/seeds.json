@@ -1,0 +1,29 @@
+[
+{
+  "model": "results.result",
+  "pk": 1,
+  "fields": {
+    "boardgame": 1,
+    "result": "Win",
+    "owner": 1
+  }
+},
+{
+  "model": "results.result",
+  "pk": 2,
+  "fields": {
+    "boardgame": 1,
+    "result": "Draw",
+    "owner": 1
+  }
+},
+{
+  "model": "results.result",
+  "pk": 3,
+  "fields": {
+    "boardgame": 1,
+    "result": "Loss",
+    "owner": 1
+  }
+}
+]
