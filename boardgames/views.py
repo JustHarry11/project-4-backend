@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
 from .models import Boardgame
 from .serializers.common import BoardgameSerializer
 from .serializers.populated import PopulatedBoardgameSerializer
@@ -44,3 +44,23 @@ class BoardgameDetailView(APIView):
         boardgame = get_object_or_404(Boardgame, pk=pk)
         boardgame.delete()
         return Response(status=204)
+    
+
+class BoardgameLikeView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, pk):
+        boardgame = get_object_or_404(Boardgame, pk=pk)
+        user = request.user
+
+        if user in boardgame.likes.all():
+            boardgame.likes.remove(user)
+            liked = False
+        else:
+            boardgame.likes.add(user)
+            liked = True
+
+        return Response({
+            "liked": liked,
+            "total_likes": boardgame.likes.count()
+        }, status=200)
