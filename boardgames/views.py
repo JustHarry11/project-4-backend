@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+from utils.permissions import IsOwnerOrReadOnly
 from .models import Boardgame
 from .serializers.common import BoardgameSerializer
 from .serializers.populated import PopulatedBoardgameSerializer
@@ -24,7 +25,7 @@ class BoardgameListView(APIView):
         
 
 class BoardgameDetailView(APIView):
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsOwnerOrReadOnly]
     # Show
     def get(self, request, pk):
         boardgame = get_object_or_404(Boardgame, pk=pk)
@@ -34,6 +35,9 @@ class BoardgameDetailView(APIView):
     # Update
     def put(self, request, pk):
         boardgame = get_object_or_404(Boardgame, pk=pk)
+
+        self.check_object_permissions(request, boardgame)
+
         serialized_boardgame = BoardgameSerializer(boardgame, data=request.data, partial=True)
         serialized_boardgame.is_valid(raise_exception=True)
         serialized_boardgame.save()
@@ -42,6 +46,9 @@ class BoardgameDetailView(APIView):
     # Delete
     def delete(self, request, pk):
         boardgame = get_object_or_404(Boardgame, pk=pk)
+
+        self.check_object_permissions(request, boardgame)
+
         boardgame.delete()
         return Response(status=204)
     
