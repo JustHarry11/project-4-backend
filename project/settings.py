@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary',
     'corsheaders',
     'rest_framework',
     'rest_framework_simplejwt',
@@ -60,9 +62,18 @@ REST_FRAMEWORK = {
     )
 }
 
+MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
 ]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': env('CLOUDINARY_API_KEY'),
+    'API_SECRET': env('CLOUDINARY_API_SECRET')
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
