@@ -17,8 +17,9 @@ class BoardgameListView(APIView):
 
     # Create
     def post(self, request):
-        request.data['owner'] = request.user.id
-        serialized_boardgame = BoardgameSerializer(data=request.data)
+        data = request.data.copy()
+        data['owner'] = request.user.id
+        serialized_boardgame = BoardgameSerializer(data=data)
         serialized_boardgame.is_valid(raise_exception=True)
         serialized_boardgame.save()
         return Response(serialized_boardgame.data, 201)
