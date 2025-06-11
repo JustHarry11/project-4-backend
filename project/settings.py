@@ -13,6 +13,7 @@ import os
 from datetime import timedelta
 from pathlib import Path
 import environ
+import cloudinary
 
 env = environ.Env()
 environ.Env.read_env()
@@ -59,7 +60,6 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
     'corsheaders',
@@ -69,6 +69,13 @@ INSTALLED_APPS = [
     'boardgames',
     'results',
 ]
+
+cloudinary.config( 
+  cloud_name = env('CLOUDINARY_CLOUD_NAME'), 
+  api_key = env('CLOUDINARY_API_KEY'), 
+  api_secret = env('CLOUDINARY_API_SECRET'),
+  secure = not DEBUG
+)
 
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(days=1),
@@ -81,14 +88,6 @@ REST_FRAMEWORK = {
     )
 }
 
-MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': env('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': env('CLOUDINARY_API_KEY'),
-    'API_SECRET': env('CLOUDINARY_API_SECRET')
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

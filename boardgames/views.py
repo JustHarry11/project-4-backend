@@ -1,14 +1,18 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAuthenticated
+from rest_framework.parsers import MultiPartParser, FormParser
+
 from utils.permissions import IsOwnerOrReadOnly
 from .models import Boardgame
 from .serializers.common import BoardgameSerializer
 from .serializers.populated import PopulatedBoardgameSerializer
 from django.shortcuts import get_object_or_404
+from utils.cloudinary import handle_file_upload
 
 class BoardgameListView(APIView):
     permission_classes = [IsAuthenticatedOrReadOnly]
+    parser_classes = [MultiPartParser, FormParser]
     # Index
     def get(self, request):
         boardgames = Boardgame.objects.all()
@@ -17,7 +21,7 @@ class BoardgameListView(APIView):
 
     # Create
     def post(self, request):
-        data = request.data.copy()
+        data = handle_file_upload(request, 'image_url')
         data['owner'] = request.user.id
         serialized_boardgame = BoardgameSerializer(data=data)
         serialized_boardgame.is_valid(raise_exception=True)
@@ -27,6 +31,7 @@ class BoardgameListView(APIView):
 
 class BoardgameDetailView(APIView):
     permission_classes = [IsOwnerOrReadOnly]
+    parser_classes = [MultiPartParser, FormParser]
     # Show
     def get(self, request, pk):
         boardgame = get_object_or_404(Boardgame, pk=pk)
@@ -38,8 +43,8 @@ class BoardgameDetailView(APIView):
         boardgame = get_object_or_404(Boardgame, pk=pk)
 
         self.check_object_permissions(request, boardgame)
-
-        serialized_boardgame = BoardgameSerializer(boardgame, data=request.data, partial=True)
+        data = handle_file_upload(request,'image_url')
+        serialized_boardgame = BoardgameSerializer(boardgame, data=data, partial=True)
         serialized_boardgame.is_valid(raise_exception=True)
         serialized_boardgame.save()
         return Response(serialized_boardgame.data)

@@ -1,5 +1,4 @@
 from django.db import models
-from cloudinary_storage.storage import MediaCloudinaryStorage
 # Create your models here.
 class Boardgame(models.Model):
     TYPE_CHOICES = [
@@ -15,7 +14,7 @@ class Boardgame(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(max_length=2000)
     instruction = models.TextField(max_length=4000)
-    image_url = models.ImageField(max_length=5000, upload_to='media/', blank=True, storage=MediaCloudinaryStorage)
+    image_url = models.URLField(max_length=5000, blank=True)
     type = models.CharField(max_length=255, choices=TYPE_CHOICES)
     genre = models.CharField(max_length=255)
     max_players = models.PositiveIntegerField()
