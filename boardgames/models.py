@@ -15,7 +15,7 @@ class Boardgame(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField(max_length=2000)
     instruction = models.TextField(max_length=4000)
-    image_url = models.ImageField(upload_to='media/', blank=True, storage=MediaCloudinaryStorage)
+    image_url = models.ImageField(max_length=5000, upload_to='media/', blank=True, storage=MediaCloudinaryStorage)
     type = models.CharField(max_length=255, choices=TYPE_CHOICES)
     genre = models.CharField(max_length=255)
     max_players = models.PositiveIntegerField()
